@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+	<script src='https://api.mapbox.com/styles/v1/mariatechmaniac/ciqhvouef001peanhh22zz2rr.html?title=true&access_token=pk.eyJ1IjoibWFyaWF0ZWNobWFuaWFjIiwiYSI6ImNpcWh2dnNjczAwOW1od2t4ajYybzY2b2MifQ.TdIEwB_XXvcKNrKxUBS1_g#13.02/51.4918/-0.1383'></script>
+	<link href='https://api.mapbox.com/styles/v1/mariatechmaniac/ciqhvouef001peanhh22zz2rr.html?title=true&access_token=pk.eyJ1IjoibWFyaWF0ZWNobWFuaWFjIiwiYSI6ImNpcWh2dnNjczAwOW1od2t4ajYybzY2b2MifQ.TdIEwB_XXvcKNrKxUBS1_g#13.02/51.4918/-0.1383' rel='stylesheet' /> #MARIA I dont know if I pasted the right link in here
+	</head>
+	<body>
+	<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFyaWF0ZWNobWFuaWFjIiwiYSI6ImNpcWh2dnNjczAwOW1od2t4ajYybzY2b2MifQ.TdIEwB_XXvcKNrKxUBS1_g';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9'
+});
+</script>          
+        
+var map = new mapboxgl.Map({
+  container: 'map',
+  center: [-122.420679, 37.772537],
+  zoom: 13,
+  style: style_object,
+  hash: true
+});
+
+var circle = L.circle([51.5132, -0.1345], 500, {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5
+}).addTo(mymap);
+
+circle.bindPopup("<b>Berwick Street Market
+</b><br>Monday to Saturday 8am -6pm.").openPopup();
+
+var marker = L.marker([51.5132, -0.1345]).addTo(mymap);
+
+marker.bindPopup("<b>Savage Salads</b><br>Monday - Friday 10am - 4pm. #Salads #Healthy #Vegetarian.").openPopup();
+
+
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Savage Salads",
+        "amenity": "Stall",
+        "popupContent": "Monday -Friday 10am-4pm"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [529548, 181015]
+    }
+};
+	</body>
+</html>
